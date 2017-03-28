@@ -30,64 +30,52 @@ class Command(BaseCommand):
             valor = float(child[0].text) * 1000000
 
             if (child.attrib.get('r').startswith('C')):
-                acao = 'venda'
                 categoria_titulo, created = CategoriaTitulo.objects.get_or_create(categoria_titulo='LTN')
-                OperacaoTitulo.objects.create(categoria_titulo=categoria_titulo, mes=mes, ano=ano, acao=acao, valor=valor)
+                OperacaoTitulo.objects.create(categoria_titulo=categoria_titulo, mes=mes, ano=ano, acao='venda', valor=valor)
 
             elif (child.attrib.get('r').startswith('D')):
-                acao = 'venda'
                 categoria_titulo, created = CategoriaTitulo.objects.get_or_create(categoria_titulo='LFT')
-                OperacaoTitulo.objects.create(categoria_titulo=categoria_titulo, mes=mes, ano=ano, acao=acao, valor=valor)
+                OperacaoTitulo.objects.create(categoria_titulo=categoria_titulo, mes=mes, ano=ano, acao='venda', valor=valor)
 
             elif (child.attrib.get('r').startswith('E')):
-                acao = 'venda'
                 categoria_titulo, created = CategoriaTitulo.objects.get_or_create(categoria_titulo='NTN-B')
-                OperacaoTitulo.objects.create(categoria_titulo=categoria_titulo, mes=mes, ano=ano, acao=acao, valor=valor)
+                OperacaoTitulo.objects.create(categoria_titulo=categoria_titulo, mes=mes, ano=ano, acao='venda', valor=valor)
 
             elif (child.attrib.get('r').startswith('F')):
-                acao = 'venda'
                 categoria_titulo, created = CategoriaTitulo.objects.get_or_create(categoria_titulo='NTN-B Principal')
-                OperacaoTitulo.objects.create(categoria_titulo=categoria_titulo, mes=mes, ano=ano, acao=acao, valor=valor)
+                OperacaoTitulo.objects.create(categoria_titulo=categoria_titulo, mes=mes, ano=ano, acao='venda', valor=valor)
 
             elif (child.attrib.get('r').startswith('G')):
-                acao = 'venda'
                 categoria_titulo, created = CategoriaTitulo.objects.get_or_create(categoria_titulo='NTN-C')
-                OperacaoTitulo.objects.create(categoria_titulo=categoria_titulo, mes=mes, ano=ano, acao=acao, valor=valor)
+                OperacaoTitulo.objects.create(categoria_titulo=categoria_titulo, mes=mes, ano=ano, acao='venda', valor=valor)
 
             elif (child.attrib.get('r').startswith('H')):
-                acao = 'venda'
                 categoria_titulo, created = CategoriaTitulo.objects.get_or_create(categoria_titulo='NTN-F')
-                OperacaoTitulo.objects.create(categoria_titulo=categoria_titulo, mes=mes, ano=ano, acao=acao, valor=valor)
+                OperacaoTitulo.objects.create(categoria_titulo=categoria_titulo, mes=mes, ano=ano, acao='venda', valor=valor)
 
             elif (child.attrib.get('r').startswith('I')):
-                acao = 'resgate'
                 categoria_titulo, created = CategoriaTitulo.objects.get_or_create(categoria_titulo='LTN')
-                OperacaoTitulo.objects.create(categoria_titulo=categoria_titulo, mes=mes, ano=ano, acao=acao, valor=valor)
+                OperacaoTitulo.objects.create(categoria_titulo=categoria_titulo, mes=mes, ano=ano, acao='resgate', valor=valor)
 
             elif (child.attrib.get('r').startswith('J')):
-                acao = 'resgate'
                 categoria_titulo, created = CategoriaTitulo.objects.get_or_create(categoria_titulo='LFT')
-                OperacaoTitulo.objects.create(categoria_titulo=categoria_titulo, mes=mes, ano=ano, acao=acao, valor=valor)
+                OperacaoTitulo.objects.create(categoria_titulo=categoria_titulo, mes=mes, ano=ano, acao='resgate', valor=valor)
 
             elif (child.attrib.get('r').startswith('K')):
-                acao = 'resgate'
                 categoria_titulo, created = CategoriaTitulo.objects.get_or_create(categoria_titulo='NTN-B')
-                OperacaoTitulo.objects.create(categoria_titulo=categoria_titulo, mes=mes, ano=ano, acao=acao, valor=valor)
+                OperacaoTitulo.objects.create(categoria_titulo=categoria_titulo, mes=mes, ano=ano, acao='resgate', valor=valor)
 
             elif (child.attrib.get('r').startswith('L')):
-                acao = 'resgate'
                 categoria_titulo, created = CategoriaTitulo.objects.get_or_create(categoria_titulo='NTN-B Principal')
-                OperacaoTitulo.objects.create(categoria_titulo=categoria_titulo, mes=mes, ano=ano, acao=acao, valor=valor)
+                OperacaoTitulo.objects.create(categoria_titulo=categoria_titulo, mes=mes, ano=ano, acao='resgate', valor=valor)
 
             elif (child.attrib.get('r').startswith('M')):
-                acao = 'resgate'
                 categoria_titulo, created = CategoriaTitulo.objects.get_or_create(categoria_titulo='NTN-C')
-                OperacaoTitulo.objects.create(categoria_titulo=categoria_titulo, mes=mes, ano=ano, acao=acao, valor=valor)
+                OperacaoTitulo.objects.create(categoria_titulo=categoria_titulo, mes=mes, ano=ano, acao='resgate', valor=valor)
 
             elif (child.attrib.get('r').startswith('N')):
-                acao = 'resgate'
                 categoria_titulo, created = CategoriaTitulo.objects.get_or_create(categoria_titulo='NTN-F')
-                OperacaoTitulo.objects.create(categoria_titulo=categoria_titulo, mes=mes, ano=ano, acao=acao, valor=valor)
+                OperacaoTitulo.objects.create(categoria_titulo=categoria_titulo, mes=mes, ano=ano, acao='resgate', valor=valor)
 
     def get_month(self, serial_date):
         return self.get_date(serial_date).strftime('%m')
