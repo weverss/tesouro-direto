@@ -20,6 +20,11 @@ python manage.py migrate
 python manage.py importdata /path/para/planilha.xlsx
 ```
 
+## Inicializa o servidor built-in:
+```
+python manage.py runserver
+```
+
 
 ## Exemplo de Requisições
 
